@@ -79,4 +79,5 @@ example: user echo
 !(\n)[]()>[0]
 ```
 meaning:
-- 
+- staae 0 writes from stdin to the tape and goes to state 1
+- state 1 prints the current tape cell, then if it was a line break it terminates, and otherwise it goes right and back to state 0
