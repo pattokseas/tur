@@ -14,9 +14,9 @@ tur file format:
 - Line n: state n-2
 
 tape format: literal ascii characters except:
-- literal \ must be escaped as \\
+- literal \ must be escaped as \\\\
 - literal line feed (ascii x0A) must be escaped as \n
-- available C escape sequences: \0 \a \b \f \n \r \t \v \\
+- available C escape sequences: \0 \a \b \f \n \r \t \v \\\\
 - can encode arbitrary 8-bit character with hex as \xHH
     - hex code must be exactly two hex digits, e.g. \x0A \x6F
 
@@ -24,7 +24,7 @@ state format:
 - lead with ! to print character at tape pointer to stdout
 - any number (at least 1) of branches with the format (R)(W)D[S]
     - R and W are characters following the same escape rules as the tape
-        - one exception: to read or write a literal ')', must have \)
+        - one exception: to read or write a literal ')', must have \\)
     - D is either of the characters < or >
     - S is a number in decimal
     - meaning: if the current tape position has R: write W, move the tape pointer in the D direction, and go to state S
